@@ -6,7 +6,17 @@ const NotFound = () => {
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    document.title = "Page Not Found | AgriDrone Spares";
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute("content", "This page does not exist. Browse agricultural drone spare parts at AgriDrone Spares, Rawalpindi.");
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", "Page Not Found | AgriDrone Spares");
+    document
+      .querySelector('meta[property="og:description"]')
+      ?.setAttribute("content", "This page does not exist. Browse agricultural drone spare parts at AgriDrone Spares.");
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", "https://connect-rawalpindi-hub.lovable.app/");
   }, [location.pathname]);
+
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
